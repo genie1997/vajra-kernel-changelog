@@ -12,6 +12,16 @@ Linux 5.4.302, built on the Scarlet base with Neutron Clang 24.
 
 ---
 
+## 2.3 — 29 September 2026
+
+- Hardening across the root and SELinux code — closes a use-after-free that could hit under memory
+  pressure, adds a lock that was missing between the two paths that rewrite the live policy, and
+  fixes a context-check hook that could log a bit of kernel memory.
+- The granted-app list is no longer rewritten from a partial read, so a bad read can't quietly drop
+  your apps.
+- Trimmed the SELinux footprint — the root domain dropped a few attributes it never used. Same
+  KernelSU-Next 3.4.0-legacy and SuSFS 2.3.0; keep the 3.4.0 manager.
+
 ## 2.2 — 28 September 2026
 
 - KernelSU-Next updated to 3.4.0-legacy. Use the KernelSU-Next 3.4.0 manager — the same one 2.0
@@ -51,7 +61,7 @@ First release.
 
 ## Flashing
 
-Franco Kernel Manager's built-in flasher, or `adb sideload Vajra-2.2.zip` from recovery.
+Franco Kernel Manager's built-in flasher, or `adb sideload Vajra-2.3.zip` from recovery.
 
 It is an AnyKernel3 zip, kernel-only: it replaces the Image and leaves your ROM's ramdisk alone, so it
 flashes on top of whatever redwood ROM you are already running. No wipe, no data loss.
