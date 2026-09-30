@@ -12,6 +12,13 @@ Linux 5.4.302, built on the Scarlet base with Neutron Clang 24.
 
 ---
 
+## 3.0.1 — 1 October 2026
+
+- Fixes the manager showing as unsupported on 3.0. The kernel's first search for the manager now
+  runs at post-fs-data, early in boot, instead of a later stage a clean install could never reach —
+  so the manager is recognised on the first boot, and much sooner.
+- Same features as 3.0; keep the 3.4.0 manager.
+
 ## 3.0 — 30 September 2026
 
 - Several root features that were compiled in but never reachable are now active: safe mode, adb
