@@ -12,6 +12,18 @@ Linux 5.4.302, built on the Scarlet base with Neutron Clang 24.
 
 ---
 
+## 3.0 — 30 September 2026
+
+- Several root features that were compiled in but never reachable are now active: safe mode, adb
+  root, su exec logging and the audit consumer.
+- Haptics: the vibration effect an app asks for is the one that actually plays. The driver was
+  ignoring the requested effect id and always falling back to the first one.
+- Driver fixes across the root and filesystem code, plus new filesystem options in the redwood
+  config — tmpfs xattrs and ACLs, and the overlayfs correctness set.
+- A display fix that also closes a crash path on a non-DSI connector, and an erofs read fix. Both
+  had been build warnings for a long time; the tree now builds clean.
+- Same KernelSU-Next 3.4.0-legacy and SuSFS 2.3.0; keep the 3.4.0 manager.
+
 ## 2.3 — 29 September 2026
 
 - Hardening across the root and SELinux code — closes a use-after-free that could hit under memory
