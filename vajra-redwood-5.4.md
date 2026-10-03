@@ -12,6 +12,13 @@ Linux 5.4.302, built on the Scarlet base with Neutron Clang 24.
 
 ---
 
+## 3.1 — 4 October 2026
+
+- Trimmed the SELinux footprint further — the root domain dropped an unused rule and narrowed another.
+- SuSFS: fixed `sus_mount` hiding to use the same audience as the rest of the hidden-file
+  features, instead of a separate one.
+- Same KernelSU-Next 3.4.0-legacy and SuSFS 2.3.0; keep the 3.4.0 manager.
+
 ## 3.0.1 — 1 October 2026
 
 - Fixes the manager showing as unsupported on 3.0. The kernel's first search for the manager now
